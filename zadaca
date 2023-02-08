@@ -1,0 +1,40 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace ConsoleApp19
+{
+    class Program
+    {
+        static void Main(string[] args)
+        {
+            List<int> broevi = new List<int> { 3, 5, 10, 17, 34, 4, 26, 24, 17, 18 };
+            int najgolem = broevi[0];
+            for (int i = 0; i < broevi.Count; i++)
+            {
+                if (najgolem < broevi[i])
+                {
+                    najgolem = broevi[i];
+                }
+            }
+            int prv = 1;
+            int vtor = 1;
+            int tret;
+            int brojac = 1;
+
+            while (brojac < najgolem)
+            {
+                tret = prv + vtor;
+                prv = vtor;
+                vtor = tret;
+                brojac++;
+                if (najgolem == tret)
+                {
+                    Console.WriteLine("Najgolemiot broj od nizata pripagja na Fibonachi.");
+                }
+            }
+        }
+    }
+}
